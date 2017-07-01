@@ -27,8 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView content;
     private IntentFilter receiveFilter;
     private MessageReceive messageReceive;
-
-    private EditText to;
+     private EditText to;
     private EditText msgInput;
     private Button send;
     private IntentFilter sendFilter;
@@ -49,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
         sender = (TextView)findViewById(R.id.sender);
         content = (TextView)findViewById(R.id.content);
         receiveFilter = new IntentFilter();
@@ -81,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -110,6 +107,8 @@ public class MainActivity extends AppCompatActivity {
             for(SmsMessage message : messages)
             {
                 fullMessage += message.getMessageBody();   //获取短信内容
+
+
 
             }
             sender.setText(address);
